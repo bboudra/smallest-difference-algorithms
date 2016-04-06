@@ -1,0 +1,6 @@
+[package]
+name = "smallest_difference_calculations"
+version = "0.1.0"
+authors = ["bboudra <benboudra@gmail.com>"]
+
+[dependencies]
