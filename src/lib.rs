@@ -47,45 +47,18 @@ fn transform_and_conquer_smallest_difference(mut numbers_to_compare: Vec<i32>) -
 mod test {
     use super::brute_force_smallest_difference;
     use super::transform_and_conquer_smallest_difference;
-    #[test]
-    fn should_return_smallest_difference_is_2_3(){
-        //given
-
-        //when
-        let result: [i32; 2] = brute_force_smallest_difference( vec![0,2,3,8,11] );
-        //then
-        assert_eq!([2,3], result)
-    }
-
-    #[test]
-    fn should_return_the_only_two_numbers(){
-        //given
-
-        //when
-        let result: [i32; 2]= brute_force_smallest_difference( vec![0,25] );
-        //then
-        assert_eq!([0,25], result)
-    }
-
-    #[test]
-    fn should_return_first_set_of_closest_numbers(){
-        //given
-
-        //when
-        let result: [i32; 2] = brute_force_smallest_difference( vec![0,1,2] );
-        //then
-        assert_eq!([0,1], result)
-    }
 
     #[test]
     fn should_state_2_3_are_closest_values(){
         //given
 
         //when
-        let result: [i32; 2] = transform_and_conquer_smallest_difference( vec![0, 2, 3, 8, 12] );
+        let result_brute_force: [i32; 2] = brute_force_smallest_difference( vec![0,2,3,8,11] );
+        let result_tranform_conquer: [i32; 2] = transform_and_conquer_smallest_difference( vec![0, 2, 3, 8, 12] );
 
         //then
-        assert_eq!([2,3], result);
+        assert_eq!([2,3], result_brute_force);
+        assert_eq!([2,3], result_tranform_conquer)
     }
 
     #[test]
@@ -93,10 +66,12 @@ mod test {
         //given
 
         //when
-        let result: [i32; 2] = transform_and_conquer_smallest_difference( vec![0, 25] );
+        let result_brute_force: [i32; 2]= brute_force_smallest_difference( vec![0,25] );
+        let result_tranform_conquer: [i32; 2] = transform_and_conquer_smallest_difference( vec![0, 25] );
 
         //then
-        assert_eq!([0, 25], result)
+        assert_eq!([0,25], result_brute_force);
+        assert_eq!([0, 25], result_tranform_conquer)
     }
 
     #[test]
@@ -104,9 +79,11 @@ mod test {
         //given
 
         //when
-        let result: [i32; 2] = transform_and_conquer_smallest_difference( vec![0, 1, 2, 3]);
+        let result_brute_force: [i32; 2] = brute_force_smallest_difference( vec![0,1,2] );
+        let result_tranform_conquer: [i32; 2] = transform_and_conquer_smallest_difference( vec![0, 1, 2, 3]);
 
         //then
-        assert_eq!([0, 1], result)
+        assert_eq!([0,1], result_brute_force);
+        assert_eq!([0, 1], result_tranform_conquer)
     }
 }
